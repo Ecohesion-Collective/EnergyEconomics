@@ -1,0 +1,10 @@
+*.rep
+*.err
+*.mdls
+*.2mdl
+*.vdfx
+*.tab
+*.c
+*.obj
+*.dll
+*.pdb
