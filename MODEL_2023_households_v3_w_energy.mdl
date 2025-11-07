@@ -237,7 +237,7 @@ Act c19 shocks=
 	~		|
 
 Act carbon tax=
-	1
+	0
 	~	Dmnl
 	~	0 = inactive
 		1 = active
@@ -280,7 +280,7 @@ Act elast beta=
 	|
 
 Act Electricication=
-	1
+	0
 	~	Dmnl
 	~	Switches on (=1) or off (=0) electrification policy
 	|
@@ -3401,10 +3401,13 @@ carbon tax related costs hhs rq[regions,quintiles]=
 	~		|
 
 carbon tax related costs hhs rqi[regions,quintiles,ind]=
-	c hhs ESc pp rqi[regions,quintiles,ind]*(embedded ucc pp[ind]+direct ucc pp[ind])
-	/(1+tls[ind])
-	~	
-	~		|
+	c hhs ESc nom bp rqi[regions,quintiles,ind]*direct ucc bp nom[ind]
+	+c hhs ESc nom bp dom rqi[regions,quintiles,ind]*paid embedded ucc bp nom[ind]
+	~	Euro/(Year*Household)
+	~	c hhs ESc pp rqi[regions,quintiles,ind]*(paid embedded ucc pp[ind]+direct ucc \
+		pp[ind])
+		/(1+tls[ind])
+	|
 
 Carbon tax tot=
 	Carbon tax nace + Carbon tax hh tot
@@ -3793,8 +3796,8 @@ check NFI d=
 	~		|
 
 check nom pp rq i by group[regions,quintiles,ind]=
-	c hhs rqi pp[regions,quintiles,ind]*num hhs rq delayed[regions,quintiles]/c nom pp rq i
-[regions,quintiles,ind]
+	c hhs rqi pp[regions,quintiles,ind]*ZIDZ(num hhs rq delayed[regions,quintiles],c nom pp rq i
+	[regions,quintiles,ind])
 	~	
 	~		|
 
@@ -20233,7 +20236,7 @@ RES transition=
 	|
 
 RES transition switch=
-	1
+	0
 	~	
 	~	1 triggers RES transition (linear extrapolation based on final values in Maeder et \
 		al., 2021). 
@@ -41080,10 +41083,6 @@ Households Carbon Tax
 10,0,c hhs ESc pp rqi,1485,1635,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
 10,0,tls,1470,1776,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
 10,0,direct ucc pp,1401,1813,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
-1,0,01E4D23A3AB3DDEBBE7B7682F15D69641DE6C8AE,013A9A06E14F8EE66F616F16D3458007EE952C21,1,0,0,0,0,192,0,-1--1--1,,1|(1327,1590)|
-1,0,F381F05B313AD9E3B686CA51CB5C5682C23E7AB2,013A9A06E14F8EE66F616F16D3458007EE952C21,1,0,0,0,0,192,0,-1--1--1,,1|(1384,1601)|
-1,0,3595AF20F3B11512CBA12D702F6C6EC21CD77280,013A9A06E14F8EE66F616F16D3458007EE952C21,1,0,0,0,0,192,0,-1--1--1,,1|(1389,1766)|
-1,0,011F475157AC44AA5A6195E634088D95A8E82E9F,013A9A06E14F8EE66F616F16D3458007EE952C21,1,0,0,0,0,192,0,-1--1--1,,1|(1319,1779)|
 1,0,013A9A06E14F8EE66F616F16D3458007EE952C21,7DF56382784FB8A98AB8EB4F461335E6AD3275A7,1,0,0,0,0,192,0,-1--1--1,,1|(1186,1719)|
 1,0,F24B6BEEC3894B1956E40F8C9B660C73E6836EC3,3144D422B514E8E9893E6EE255E514BE18A046E2,1,0,0,0,0,192,0,-1--1--1,,1|(742,1674)|
 1,0,3144D422B514E8E9893E6EE255E514BE18A046E2,5A266DD32E755EED85333759899DAC05D527BE5F,1,0,0,0,0,192,0,-1--1--1,,1|(742,1780)|
@@ -41103,6 +41102,15 @@ Households Carbon Tax
 10,0,S Time Policy start,631,1575,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
 1,0,54DFC0678A55DB8B2D6B5D29909B576DC770CD42,B6E49BE558ACA947285C246EF4681A53D11DE72C,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
 1,0,4FB223A3CAFE0CBB20CFFF568C296A11DB0A73F0,B6E49BE558ACA947285C246EF4681A53D11DE72C,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,0,paid embedded ucc pp,1280,1546,50,17,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,0,c hhs ESc nom bp dom rqi,1635,1721,55,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,0,c hhs ESc nom bp rqi,1645,1789,55,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,0,direct ucc bp nom,1632,1850,50,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,0,paid embedded ucc bp nom,1647,1646,60,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,0,67B6FA98F5CE2087DE85EB245E76D5EA9BB5F482,013A9A06E14F8EE66F616F16D3458007EE952C21,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,0,8C30A2608C12EF31EC4D5DDC8D6BF8A51337EEE2,013A9A06E14F8EE66F616F16D3458007EE952C21,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,0,472EE7A5961EC8DADF501D22BBCC4F98C5A42808,013A9A06E14F8EE66F616F16D3458007EE952C21,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,0,79EC8DAE5C8529B7A188F9F575BF77D7623E5514,013A9A06E14F8EE66F616F16D3458007EE952C21,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
 ///---\\\
 :GRAPH Active_Policies
 :TITLE Active Policies
@@ -41122,17 +41130,15 @@ Households Carbon Tax
 22:Days,Day
 22:Weeks,Week
 30:?main=Excel_new_origin.xlsx
-10:calibration_investment5.cin,calibration_technology_employment3.cin,calibration_skills_cohorts2.cin,calibration_settings_lfpr_scaling_gs4.cin,test compile.cin,calib_lfpr_sens_may15.cin,calib_lfpr_sens_aug08_quaids.cin
+10:parameters.cin
 11:calibration_settings_lfpr_2025.voc
 12:calibration_lfpr_2025.vpd
-13:data.vdfx
-23:0
 18:seed_sens.vsc
 20:carbon_tax_paper.lst
 15:0,0,0,0,0,0
 27:8,
 34:0,
-42:0
+42:1
 72:0
 73:1
 35:Year

@@ -1,0 +1,98 @@
+0.05 <= sens inv i[agri] = 0.05  <= 1
+0.05 <= sens inv i[mining] = 0.149771  <= 1
+0.05 <= sens inv i[manufacturing] = 0.05  <= 1
+0.05 <= sens inv i[petroleum] = 0.05  <= 1
+0.05 <= sens inv i[vehicles] = 0.159928  <= 1
+0.05 <= sens inv i[electricity ind] = 0.05  <= 1
+0.05 <= sens inv i[gas ind] = 0.05  <= 1
+0.05 <= sens inv i[heat ind] = 0.05  <= 1
+0.05 <= sens inv i[water] = 0.781971  <= 1
+0.05 <= sens inv i[construction] = 0.471832  <= 1
+0.05 <= sens inv i[trade] = 0.05  <= 1
+0.05 <= sens inv i[transport] = 0.05  <= 1
+0.05 <= sens inv i[hospitality] = 0.05  <= 1
+0.05 <= sens inv i[ict] = 0.183672  <= 1
+0.05 <= sens inv i[finance] = 0.0534804  <= 1
+0.05 <= sens inv i[realestate] = 0.369339  <= 1
+0.05 <= sens inv i[profserv] = 0.05  <= 1
+0.05 <= sens inv i[public] = 0.05  <= 1
+0.05 <= sens inv i[education] = 0.05  <= 1
+0.05 <= sens inv i[health] = 0.05  <= 1
+0.05 <= sens inv i[households] = 0.315596  <= 1
+
+0.1 <= sens prob = 84.0375  <= 100
+0.05 <= initial prob T2 i = 0.364849  <= 0.95
+0.05 <= initial prob T3 i = 0.421225  <= 0.95
+1 <= technology adjustment time = 3.69508  <= 5
+
+1 <= duration skill transition = 2.96286  <= 5
+0 <= sens skill cs[p1524,low] = 0.0118727  <= 1
+0 <= sens skill cs[p1524,mid] = 0.945877  <= 1
+0 <= sens skill cs[p1524,hig] = 1  <= 1
+0 <= sens skill cs[p2544,low] = 0.531697  <= 1
+0 <= sens skill cs[p2544,mid] = 0.804737  <= 1
+0 <= sens skill cs[p2544,hig] = 0.59143  <= 1
+0 <= sens skill cs[p4564,low] = 0  <= 1
+0 <= sens skill cs[p4564,mid] = 0.976119  <= 1
+0 <= sens skill cs[p4564,hig] = 0  <= 1
+
+0.01 <= c19 lsc20[female,low] = 9.45893  <= 10
+0.01 <= c19 lsc20[female,mid] = 2.03407  <= 10
+0.01 <= c19 lsc20[female,hig] = 1.84526  <= 10
+0.01 <= c19 lsc20[male,low] = 9.27496  <= 10
+0.01 <= c19 lsc20[male,mid] = 4.15004  <= 10
+0.01 <= c19 lsc20[male,hig] = 9.29971  <= 10
+0.01 <= c19 lsc21[female,low] = 7.66961  <= 10
+0.01 <= c19 lsc21[female,mid] = 6.97121  <= 10
+0.01 <= c19 lsc21[female,hig] = 1.16628  <= 10
+0.01 <= c19 lsc21[male,low] = 7.81758  <= 10
+0.01 <= c19 lsc21[male,mid] = 5.03284  <= 10
+0.01 <= c19 lsc21[male,hig] = 4.10592  <= 10
+0.01 <= c19 lsc22[female,low] = 5.70198  <= 10
+0.01 <= c19 lsc22[female,mid] = 7.85025  <= 10
+0.01 <= c19 lsc22[female,hig] = 6.94968  <= 10
+0.01 <= c19 lsc22[male,low] = 2.95576  <= 10
+0.01 <= c19 lsc22[male,mid] = 1.2441  <= 10
+0.01 <= c19 lsc22[male,hig] = 7.49397  <= 10
+
+0.3 <= basic omega price = 0.70106  <= 0.9
+0 <= omega lambda[low] = 0  <= 1
+0 <= omega lambda[mid] = 0  <= 1
+0 <= omega lambda[hig] = 0  <= 1
+0 <= omega overall lambda = 0.88806  <= 1
+0 <= unempl wage sensitivity = 0.00615162  <= 1
+0 <= sens male share unemp s[low] = 0  <= 1
+0 <= sens male share unemp s[mid] = 0  <= 1
+0 <= sens male share unemp s[hig] = 0  <= 1
+
+0 <= c19 LFPR 2023[female,low] = 0.00629722  <= 0.02
+0 <= c19 LFPR 2023[female,mid] = 0  <= 0.02
+0 <= c19 LFPR 2023[female,hig] = 0  <= 0.02
+0 <= c19 LFPR 2023[male,low] = 0.0113793  <= 0.02
+0 <= c19 LFPR 2023[male,mid] = 0  <= 0.02
+0 <= c19 LFPR 2023[male,hig] = 0  <= 0.02
+0.01 <= sens LFPR income[female,low] = 0.01  <= 1
+0.01 <= sens LFPR income[female,mid] = 1  <= 1
+0.01 <= sens LFPR income[female,hig] = 0.612142  <= 1
+0.01 <= sens LFPR income[male,low] = 1  <= 1
+0.01 <= sens LFPR income[male,mid] = 0.775947  <= 1
+0.01 <= sens LFPR income[male,hig] = 0.01  <= 1
+
+-0.15 <= c19 LFPR 2020[female,low] = -0.137223  <= 0
+-0.15 <= c19 LFPR 2020[female,mid] = -0.132913  <= 0
+-0.15 <= c19 LFPR 2020[female,hig] = -0.117453  <= 0
+-0.15 <= c19 LFPR 2020[male,low] = -0.0576795  <= 0
+-0.15 <= c19 LFPR 2020[male,mid] = -0.10742  <= 0
+-0.15 <= c19 LFPR 2020[male,hig] = -0.112466  <= 0
+0 <= c19 LFPR 2021[female,low] = 0.0695392  <= 0.12
+0 <= c19 LFPR 2021[female,mid] = 0.069543  <= 0.12
+0 <= c19 LFPR 2021[female,hig] = 0.0412858  <= 0.12
+0 <= c19 LFPR 2021[male,low] = 0.12  <= 0.12
+0 <= c19 LFPR 2021[male,mid] = 0.0998688  <= 0.12
+0 <= c19 LFPR 2021[male,hig] = 0.0582547  <= 0.12
+0 <= c19 LFPR 2022[female,low] = 0.0390719  <= 0.06
+0 <= c19 LFPR 2022[female,mid] = 0.029549  <= 0.06
+0 <= c19 LFPR 2022[female,hig] = 0.0192176  <= 0.06
+0 <= c19 LFPR 2022[male,low] = 0.06  <= 0.06
+0 <= c19 LFPR 2022[male,mid] = 0.0467889  <= 0.06
+0 <= c19 LFPR 2022[male,hig] = 0.0264172  <= 0.06
